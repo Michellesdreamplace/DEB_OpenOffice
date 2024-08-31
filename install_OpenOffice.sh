@@ -34,9 +34,10 @@ echo "    ... um Dateien entpacken zu können ..."
 echo " ... $NORMAL"
 sudo apt install tar -y
 echo "$GREEN ************************************************************"
+sudo mkdir $HOMEVERZEICHNIS/Downloads/OpenOffice
 echo "    lade OpenOffice herunter ..."
 echo " ... $NORMAL"
-wget -P $HOMEVERZEICHNIS/Downloads/ $OOURL -O $OONAME
+wget $OOURL -O $HOMEVERZEICHNIS/Downloads/OpenOffice/$OONAME
 echo "$GREEN ************************************************************"
 echo "    entpacke OpenOffice ..."
 echo " ... $NORMAL"
@@ -44,11 +45,11 @@ sudo tar -xzf $HOMEVERZEICHNIS/Downloads/OpenOffice/$OONAME -C $HOMEVERZEICHNIS/
 echo "$GREEN ************************************************************"
 echo "    installiere OpenOffice ..."
 echo " ... $NORMAL"
-sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/*.deb
+sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/*.deb
 echo "$GREEN ************************************************************"
 echo "    installiere OpenOffice Desktop-Integration ..."
 echo " ... $NORMAL"
-sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/desktop-integration/*.deb
+sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/desktop-integration/*.deb
 echo "$GREEN ************************************************************"
 sudo apt update -y
 sudo apt upgrade -y
