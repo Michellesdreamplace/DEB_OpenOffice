@@ -36,7 +36,7 @@ sudo apt install tar -y
 echo "$GREEN ************************************************************"
 echo "    lade OpenOffice herunter ..."
 echo " ... $NORMAL"
-wget $OOURL -O $OONAME && unzip latest-de_DE.zip && rm -f latest-de_DE.zip
+wget -P $HOMEVERZEICHNIS/Downloads/ $OOURL -O $OONAME
 echo "$GREEN ************************************************************"
 echo "    entpacke OpenOffice ..."
 echo " ... $NORMAL"
