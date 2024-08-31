@@ -66,9 +66,16 @@ echo "    installiere OpenOffice Desktop-Integration ..."
 echo " ... $NORMAL"
 sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/desktop-integration/*.deb
 echo "$GREEN ************************************************************"
+#
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
+#
+echo "$GREEN ************************************************************"
+echo "    aufräumen ..."
+echo " ... $NORMAL"
+sudo rm -r $HOMEVERZEICHNIS/Downloads/OpenOffice
+echo "$GREEN ************************************************************"
 echo " "
 echo "   Fertig ..."
 echo " "
