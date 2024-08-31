@@ -15,22 +15,11 @@ MYSHELL=$SHELL
 echo "$CYAN Hallo $BENUTZER"
 echo "$CYAN Dein Home-Verzeichnis: $HOMEVERZEICHNIS"
 echo "$CYAN Deine Shell: $MYSHELL"
-#
+
 echo "$CYAN "
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+++++                                                  +++++"
-echo "+++++           Deinstalliere LibreOffice ...          +++++"
-echo "+++++  da es sonst zu Konflikten mit OpenOffice kommt  +++++"
-echo "+++++                                                  +++++"
-echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "$NORMAL "
-#
-sudo apt purge libreoffice* 
-#
-echo "$CYAN "
-echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "+++++                                                  +++++"
-echo "+++++              installiere OpenOffice              +++++"
+echo "+++++             lade OpenOffice herunter             +++++"
 echo "+++++                                                  +++++"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "$NORMAL "
@@ -58,6 +47,26 @@ echo "    entpacke OpenOffice ..."
 echo " ... $NORMAL"
 sudo tar -xzf $HOMEVERZEICHNIS/Downloads/OpenOffice/$OONAME -C $HOMEVERZEICHNIS/Downloads/OpenOffice/
 echo "$GREEN ************************************************************"
+#
+echo "$CYAN "
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++                                                  +++++"
+echo "+++++           Deinstalliere LibreOffice ...          +++++"
+echo "+++++  da es sonst zu Konflikten mit OpenOffice kommt  +++++"
+echo "+++++                                                  +++++"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "$NORMAL "
+#
+sudo apt purge libreoffice* 
+#
+echo "$CYAN "
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++                                                  +++++"
+echo "+++++             installiere OpenOffice               +++++"
+echo "+++++                                                  +++++"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "$NORMAL "
+#
 echo "    installiere OpenOffice ..."
 echo " ... $NORMAL"
 sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/*.deb
@@ -67,12 +76,32 @@ echo " ... $NORMAL"
 sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/desktop-integration/*.deb
 echo "$GREEN ************************************************************"
 #
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt autoremove -y
-#
+echo "$CYAN "
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++                                                  +++++"
+echo "+++++            aktuallisieren & aufräumen            +++++"
+echo "+++++                                                  +++++"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "$NORMAL "
 echo "$GREEN ************************************************************"
-echo "    aufräumen ..."
+echo "    lese Paketdatenbank (Repository-Index) neu ein"
+echo " ... $NORMAL"
+sudo apt update
+echo "$GREEN ************************************************************"
+echo "    Installierte Pakete werden auf eine neuere Version aktualisiert ..."
+echo "    ... um geänderte Abhängigkeiten zu erfüllen,"
+echo "    werden ge­ge­be­nen­falls auch neue Pakete installiert ..."
+echo " ... $NORMAL"
+sudo apt upgrade -y
+echo "$GREEN ************************************************************"
+echo "    bereinige System von nutzlosen Paketen ..."
+echo "    deinstalliere alle automatisch installierten Pakete,"
+echo "    die keine Abhängigkeiten mehr zu anderen Paketen haben"
+echo "    und deshalb nicht mehr benötigt werden ..."
+echo " ... $NORMAL"
+sudo apt autoremove -y
+echo "$GREEN ************************************************************"
+echo "    Verzeichnis aufräumen ..."
 echo " ... $NORMAL"
 sudo rm -r $HOMEVERZEICHNIS/Downloads/OpenOffice
 echo "$GREEN ************************************************************"
