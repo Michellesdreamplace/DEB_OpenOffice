@@ -101,7 +101,7 @@ echo "    und deshalb nicht mehr benötigt werden ..."
 echo " ... $NORMAL"
 sudo apt autoremove -y
 echo "$GREEN ************************************************************"
-echo "    Verzeichnis aufräumen ..."
+echo "    Download-Verzeichnis aufräumen ..."
 echo " ... $NORMAL"
 sudo rm -r $HOMEVERZEICHNIS/Downloads/OpenOffice
 echo "$GREEN ************************************************************"
