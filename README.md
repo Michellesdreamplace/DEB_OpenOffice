@@ -2,7 +2,7 @@
 
 ## mit diesem Script wird LibreOffice deinstalliert und OpenOffice installiert.
 
--➤ Lade die Datei "install_fonts.sh" als RAW-Datei herunter,  
+-➤ Lade die Datei "install_OpenOffice.sh" als RAW-Datei herunter,  
   
 -➤ Gib der Datei "install_OpenOffice.sh" die Rechte zum Ausführen,  
 
