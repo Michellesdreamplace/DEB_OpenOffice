@@ -1,5 +1,6 @@
 #!/bin/bash
 OOURL='https://www.dropbox.com/scl/fi/0w0wdtt1mfs6etccxb5gc/Apache_OpenOffice_4.1.15_Linux_x86-64_install-deb_de.tar.gz?rlkey=ls42daqdrr7aahczvoyej36gv&st=l7325yrf&dl=1'
+OODOWNNAME='Apache_OpenOffice_4.1.15_Linux_x86-64_install-deb_de.tar.gz?rlkey=ls42daqdrr7aahczvoyej36gv&st=l7325yrf&dl=1'
 OONAME='Apache_OpenOffice_4.1.15_Linux_x86-64_install-deb_de.tar.gz'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -14,6 +15,17 @@ MYSHELL=$SHELL
 echo "$CYAN Hallo $BENUTZER"
 echo "$CYAN Dein Home-Verzeichnis: $HOMEVERZEICHNIS"
 echo "$CYAN Deine Shell: $MYSHELL"
+#
+echo "$CYAN "
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++++                                                  +++++"
+echo "+++++           Deinstalliere LibreOffice ...          +++++"
+echo "+++++  da es sonst zu Konflikten mit OpenOffice kommt  +++++"
+echo "+++++                                                  +++++"
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "$NORMAL "
+#
+sudo apt purge libreoffice* 
 #
 echo "$CYAN "
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -34,11 +46,14 @@ echo "    ... um Dateien entpacken zu können ..."
 echo " ... $NORMAL"
 sudo apt install tar -y
 echo "$GREEN ************************************************************"
-sudo mkdir $HOMEVERZEICHNIS/Downloads/OpenOffice
 echo "    lade OpenOffice herunter ..."
 echo " ... $NORMAL"
-wget $OOURL -O $HOMEVERZEICHNIS/Downloads/OpenOffice/$OONAME
+wget -P $HOMEVERZEICHNIS/Downloads/OpenOffice $OOURL
 echo "$GREEN ************************************************************"
+#
+sudo cp $HOMEVERZEICHNIS/Downloads/OpenOffice/$OODOWNNAME $HOMEVERZEICHNIS/Downloads/OpenOffice/$OONAME
+sudo rm $HOMEVERZEICHNIS/Downloads/OpenOffice/$OODOWNNAME
+#
 echo "    entpacke OpenOffice ..."
 echo " ... $NORMAL"
 sudo tar -xzf $HOMEVERZEICHNIS/Downloads/OpenOffice/$OONAME -C $HOMEVERZEICHNIS/Downloads/OpenOffice/
