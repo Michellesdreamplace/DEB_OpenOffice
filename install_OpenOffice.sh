@@ -15,7 +15,7 @@ MYSHELL=$SHELL
 echo "$CYAN Hallo $BENUTZER"
 echo "$CYAN Dein Home-Verzeichnis: $HOMEVERZEICHNIS"
 echo "$CYAN Deine Shell: $MYSHELL"
-
+#
 echo "$CYAN "
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+++++                                                  +++++"
@@ -23,7 +23,6 @@ echo "+++++             lade OpenOffice herunter             +++++"
 echo "+++++                                                  +++++"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "$NORMAL "
-#
 echo "$GREEN ************************************************************"
 echo "    installiere wget (falls nicht vorhanden) ..."
 echo "    ... um Dateien von https herunterladen zu können ..."
@@ -56,8 +55,8 @@ echo "+++++  da es sonst zu Konflikten mit OpenOffice kommt  +++++"
 echo "+++++                                                  +++++"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "$NORMAL "
-#
 sudo apt purge libreoffice* 
+#
 #
 echo "$CYAN "
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -66,7 +65,7 @@ echo "+++++             installiere OpenOffice               +++++"
 echo "+++++                                                  +++++"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "$NORMAL "
-#
+echo "$GREEN ************************************************************"
 echo "    installiere OpenOffice ..."
 echo " ... $NORMAL"
 sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/*.deb
@@ -75,6 +74,7 @@ echo "    installiere OpenOffice Desktop-Integration ..."
 echo " ... $NORMAL"
 sudo dpkg -i $HOMEVERZEICHNIS/Downloads/OpenOffice/de/DEBS/desktop-integration/*.deb
 echo "$GREEN ************************************************************"
+#
 #
 echo "$CYAN "
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
